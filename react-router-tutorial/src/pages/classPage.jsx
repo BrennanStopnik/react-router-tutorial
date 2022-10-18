@@ -1,10 +1,21 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const ClassPage = () => {
+
+    const navigate = useNavigate()
+
+    const redirectUserFunction = () => {
+        navigate("/")
+    }
+
     return (
         <div>
             <h1>Hello Class!</h1>
-            <Link to="/home">Home Page</Link>
+            <Link to="/">Home Page</Link>
+            <br/>
+            <button onClick={() => {
+                redirectUserFunction()
+            }}>Redirect User</button>
         </div>
     )
 }
